@@ -139,6 +139,11 @@ class Autoencoder:
     model_output = self.decoder(self.encoder(model_input))
     self.model = Model(model_input, model_output, name="Autoencoder")
 
+  def reconstruct(self, images):
+    latent_representations = self.encoder.predict(images)
+    reconstructed_images = self.decoder.predict(latent_representations)
+    return reconstructed_images, latent_representations
+
   def _build_decoder(self):
     decoder_input = self._add_decoder_input()
     dense_layer = self._add_dense_layer(decoder_input)

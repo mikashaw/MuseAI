@@ -1,13 +1,13 @@
-from .autoencoder import Autoencoder
-from .sample import SoundGenerator, select_spectrograms, save_signals
+from autoencoder import Autoencoder
+from sample import SoundGenerator, select_spectrograms, save_signals
 import pickle 
-from .sample import load_fsdd 
+from sample import load_fsdd 
 
 
 HOP_LENGTH = 256
 SAVE_DIR_ORIGINAL = "/Users/mikashaw/code/ML_Projects/MuseAI/MuseAI/website/original"
 SAVE_DIR_GENERATED = "/Users/mikashaw/code/ML_Projects/MuseAI/MuseAI/website/generated"
-MIN_MAX_VALUES_PATH = "/Users/mikashaw/code/ML_Projects/MuseAI/MuseAI/website/min_max_values.pkl"
+MIN_MAX_VALUES_PATH = "/Users/mikashaw/code/ML_Projects/MuseAI/MuseAI/website/min_max_values/min_max_values.pkl"
 SPECTROGRAMS_PATH = "/Users/mikashaw/code/ML_Projects/MuseAI/MuseAI/website/spectrograms"
 
 def run_predictions():
@@ -31,7 +31,7 @@ def run_predictions():
     sampled_specs, sampled_min_max_values = select_spectrograms(specs,
                                                               file_paths,
                                                               min_max_values,
-                                                              5)
+                                                              2)
     signals, _ = sound_generator.generate(sampled_specs,
                                         sampled_min_max_values)
 
@@ -41,6 +41,8 @@ def run_predictions():
 
     save_signals(signals, SAVE_DIR_GENERATED)
     save_signals(original_signals, SAVE_DIR_ORIGINAL)
+
+run_predictions()
 
 
 
