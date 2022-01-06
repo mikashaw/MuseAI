@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    color: white;
+    background-color: black;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    font-family: "Kantumruy", "Roboto", sans-serif;
+}
+
+/* Navigation */
+
+.nav-container {
+    background: black;
+    height: 150px;
+    margin-top: 50px;
+    z-index: 500px;
+    position: relative;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90 px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav .name {
+    font-family: 'Kantumruy', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.nav-items li {
+    list-style: none;
+    margin-right: 100px;
+}
+
+.nav-items li:nth-last-of-type(1) {
+    margin: 0;
+}
+
+.nav-items li a {
+    font-family: "Kantumruy", 'Roboto', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Header */
+
+.header-container {
+    background-size: contain;
+    /*height: calc(100vh-72px);*/
+    display: flex;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-family: "Kantumruy", "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 126px;
+    text-align: left;
+}
+
+header p {
+    font-family: "Kantumruy", "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 45px;
+    width: 502px;
+/* or 150% */
+
+letter-spacing: 0.08em;
+}
+
+/* Hero Image */
+
+header .hero-image {
+    position: relative;
+}
+
+header .hero-image img {
+    transition: 300ms;
+}
+
+
+header .hero-image img:hover {
+    transform: rotate(-6deg);
+}
+
+.search-box {
+  
+    width: 1200;
+    margin: 0 auto;
+    text-align: right;
+    position: relative;
+    top: 0;
+    transition: 300ms;
+    z-index: 101;
+
+}
+
+.search-box.active {
+    top: 150 px;
+}
+
+.search-box input {
+    background: #fffffa;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+    border-radius: 0px 0px 8px 8px;
+    font-size: 24px;
+    line-height: 42px;
+    border: 0;
+    padding: 12px 48px;
+
+}
+
+.search-box input::placeholder {
+    color: #b3b3b3;
+}
+/* Hidden Items */
+
+.search-box {
+    display: none;
+
+}
+
+/* Search & Close buttons */
+
+.nav-btn-container {
+    display: flex;
+    position: relative;
+}
+
+.nav-btn-container img {
+    position: absolute;
+}
+
+.nav-btn-container .close-btn {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: 300ms;
+}
+
+.nav-btn-container .search-btn{
+    pointer-events: auto;
+    transition: 300ms;
+}
+
+.nav-btn-container.active .search-btn {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+}
+
+.nav-btn-container.active .close-btn {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+.input-parent {
+    display: block;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+    
+}
+
+#main {
+    width: max-content;
+    margin: 40px auto;
+    font-family: "Kantumruy", "Roboto", sans-serif;
+    padding: 25px 28px;
+    background: #4d474707;
+    
+    border: none;
+    animation: popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    align-items: center;
+
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.input-parent input {
+    padding: 10px 8px;
+    width: 100%;
+    font-size: 16px;
+    background: #323131;
+    border: none;
+    color: #c7c7c7;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input-parent input:hover {
+    background: #404040;
+}
+.input-parent input:focus {
+    box-shadow: 0px 0px 0px 1px #0087ff;
+}
+
+button {
+    padding: 10px 18px;
+    font-size: 15px;
+    background: rgb(21, 88, 175);
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    color: #f4f4f4;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+button:focus {
+    box-shadow: 0px 0px 0px 3px black;
+}
+
+
+
+#google-button {
+    padding: 10px 18px;
+    width: 100%;
+    font-size: 15px;
+    background-image: linear-gradient(to right, #699ff0b9, rgb(6, 85, 138));
+    border: none;
+    color: #c7c7c7;
+    border-radius: 4px;
+    
+    transition: all 0.2s ease;
+}
+
+h1 {
+    text-align: center;
+}
+
+.wrapper .login-container{
+    width: 50%;
+    margin: 40px auto;
+    padding: 25px 28px;
+    
+    border-radius: 4px;
+   
+    border: 1px solid #699ff0b9;
+    animation: popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    align-items: center;
+}
+
+.wrapper .homepage {
+    width: 70%;
+    border: 1px solid #699ff0b9;
+   
+    border-radius: 4px;
+    align-items: center;
+    margin: 40px auto;
+    animation: popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    padding: 25px 28px;
+    background-color: transparent;
+    outline: none;
+}
+
+.text h1 {
+    background: transparent;
+}
+
+.text-button-wrapper {
+    width: 100%;
+    text-align: center;
+    
+}
+
+.homepage p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.gen-content button {
+    border: none;
+    margin-top: 25px;
+    width: 20%;
+    border-radius: 4px;
+    background: white;
+    color: black; 
+    align-items: center;
+    animation: popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: all 0.2s ease;
+}
+
+.gen-audio.active {
+    display: none;
+}
+
+.gen-content {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.generated-content {
+    display: none;
+}
+
+.generated-content.active{
+    margin-top: 25px;
+    
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
